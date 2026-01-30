@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #000;
+  padding: 16px;
+  border-bottom: 2px solid #c41e3a;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-section.left {
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.header-section.center {
+  justify-content: center;
+}
+
+.header-section.center input {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.header-section.right {
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.settings-btn:hover {
+  opacity: 0.8;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.scoreboard-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.scoreboard-top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.alliance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 200px;
+}
+
+.alliance.red {
+  border-left: 4px solid #c41e3a;
+  padding-left: 16px;
+}
+
+.alliance.blue {
+  border-right: 4px solid #0052cc;
+  padding-right: 16px;
+}
+
+.team-label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score-display {
+  font-size: 72px;
+  font-weight: bold;
+  min-width: 150px;
+  text-align: center;
+}
+
+.alliance.red .score-display {
+  color: #ff6b6b;
+}
+
+.alliance.blue .score-display {
+  color: #4dabf7;
+}
+
+.score-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-score {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #fff;
+}
+
+.alliance.red .btn-score {
+  background-color: #c41e3a;
+}
+
+.alliance.red .btn-score:hover {
+  background-color: #e63f52;
+  transform: scale(1.05);
+}
+
+.alliance.blue .btn-score {
+  background-color: #0052cc;
+}
+
+.alliance.blue .btn-score:hover {
+  background-color: #0062f0;
+  transform: scale(1.05);
+}
+
+.btn-undo {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-undo:hover {
+  background-color: #777;
+}
+
+.timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.timer-display {
+  font-size: 64px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  min-width: 200px;
+  text-align: center;
+}
+
+.timer-mode {
+  font-size: 18px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.timer-controls-inline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.timer-controls-inline button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timer-controls-inline button:hover {
+  background-color: #777;
+}
+
+.timer-controls-inline button.active {
+  background-color: #c41e3a;
+}
+
+footer {
+  background-color: #000;
+  padding: 20px;
+  border-top: 1px solid #333;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+.keyboard-legend {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #2a2a2a;
+  padding: 32px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #c41e3a;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-buttons .btn-save {
+  background-color: #c41e3a;
+  color: #fff;
+}
+
+.modal-buttons .btn-save:hover {
+  background-color: #e63f52;
+}
+
+.modal-buttons .btn-cancel {
+  background-color: #555;
+  color: #fff;
+}
+
+.modal-buttons .btn-cancel:hover {
+  background-color: #777;
+}
+
+/* Action Editor Styles */
+.actions-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-fields {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.action-input {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.action-input:focus {
+  outline: none;
+  border-color: #c41e3a;
+}
+
+.points-input {
+  flex: 0.5;
+}
+
+.key-input {
+  flex: 0.3;
+  text-align: center;
+  text-transform: uppercase;
+}
